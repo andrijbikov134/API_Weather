@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Spy</title>
+</head>
+<body>
+    <h1>Погода в києві:</h1>
+    <p>Погода: <span id="weather">Error</span></p>
+    <p>Температура: <span id="temperature">0.0</span> C°</p>
+    <p>Тиск: <span id="pressure">0</span> GPa</p>
+
+    <script>
+	async function fetchValuta1() {
+            const response = await fetch('/current_weather');
+            const data = await response.json();
+            document.getElementById('weather').textContent = data.weather;
+            document.getElementById('temperature').textContent = data.temperature;
+            document.getElementById('pressure').textContent = data.pressure;
+        }
+
+        setInterval(fetchValuta1, 2000);
+        fetchValuta1();
+    </script>
+</body>
+</html>
