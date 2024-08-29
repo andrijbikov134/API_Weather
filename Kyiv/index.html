@@ -14,7 +14,7 @@
 
     <script>
 	async function fetchValuta1() {
-            const response = await fetch('http://localhost:5000/Kyiv_weather');
+            const response = await fetch('http://127.0.0.1:5000/Kyiv_weather');
             const data = await response.json();
             document.getElementById('weather').textContent = data.weather;
             document.getElementById('temperature').textContent = data.temperature;
