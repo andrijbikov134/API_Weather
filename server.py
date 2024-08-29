@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import requests
 import time
 
 app = Flask(__name__)
+CORS(app)
 
 api_key = "dab2647b113b40fc264d2352a1a9a715"
 cities = ["Kyiv", "Khmelnytskyi"]
