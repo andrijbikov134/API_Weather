@@ -25,11 +25,11 @@ def get_weather(c):
     # Add logic to update other weather data if needed
     return jsonify(weather_data), 200
 
-@app.route('/Kyiv_weather', methods=['GET'])
+@app.route('/Kyiv_weather')
 def kyiv_weather():
     return get_weather(cities[0])
 
-@app.route('/Khmelnytskyi_weather', methods=['GET'])
+@app.route('/Khmelnytskyi_weather')
 def khmelnytskyi_weather():
     return get_weather(cities[1])
 
