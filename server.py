@@ -16,7 +16,7 @@ weather_data = {
     "pressure": 0}
 
 def get_weather(c):
-    weather_url = f"http://api.openweathermap.org/data/2.5/weather?q={c}&appid={api_key}"
+    weather_url = f"http://api.openweathermap.org/data/2.5/weather?q={cities[0]}&appid={api_key}"
     response = requests.get(weather_url)
     data = response.json()
     weather_data['weather'] = data['weather'][0]['description']
